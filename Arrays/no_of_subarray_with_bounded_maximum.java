@@ -1,9 +1,5 @@
-public class no_of_subarray_with_bounded_maximum {
-    
-}
 class Solution {
     public int numSubarrayBoundedMax(int[] nums, int left, int right) {
-        int n=nums.length;
         int ans=0;
         int lgi = 0;
         int pvc=0;
