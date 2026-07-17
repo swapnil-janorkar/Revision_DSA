@@ -1,7 +1,7 @@
 package graphs;
 import java.util.*;
 
-public class bfs {
+public class dfs {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -18,26 +18,25 @@ public class bfs {
             adj.get(v).add(u);
         }
         boolean[] visited = new boolean[n + 1];
-        ans = bfs(1, adj, visited);
+        ans = dfs(1, adj, visited);
     }
-
-    private static List<Integer> bfs(int start, ArrayList<ArrayList<Integer>> adj, boolean[] visited) {
-        Queue<Integer>q=new LinkedList<>();
-        q.add(start);
-        visited[start]=true;
-        ArrayList<Integer> ls=new ArrayList<>();
-        while(!q.isEmpty()){
-            int rem=q.remove();
+    private static List<Integer> dfs(int start, ArrayList<ArrayList<Integer>> adj, boolean[] visited) {
+        Stack<Integer> st = new Stack<>();
+        st.push(start);
+        visited[start] = true;
+        ArrayList<Integer> ls = new ArrayList<>();
+        while (!st.isEmpty()) {
+            int rem = st.pop();
             ls.add(rem);
-            for(int x: adj.get(rem)){
-                if(!visited[x]){
-                    q.add(x);
-                    visited[x]=true;
+            for (int x : adj.get(rem)) {
+                if (!visited[x]) {
+                    st.push(x);
+                    visited[x] = true;
                 }
             }
 
         }
         return ls;
     }
+    
 }
-
