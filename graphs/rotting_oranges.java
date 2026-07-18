@@ -1,9 +1,6 @@
 package graphs;
 import java.util.*;
 
-public class rotting_oranges {
-    
-}
 class Solution {
     class pair {
         int r;
