@@ -1,0 +1,25 @@
+import java.util.*;
+package graphs;
+class Solution{
+    public static void main(String[] args){
+        
+    }
+    private List<Integer>dfs(ArrayList<ArrayList<Integer>>adj){
+        List<Integer>ans=new ArrayList<>();
+        boolean[]vis=new boolean[adj.size()+1];
+        for(int i=1;i<adj.size();i++){
+            if(!vis[i]){
+                dfs(i,adj,vis,ans);
+            }
+        }
+    }
+    private void dfs(int st, ArrayList<ArrayList<Integer>> adj, boolean[] vis, List<Integer> ans){
+        vis[st]=true;
+        ans.add(st);
+        for(int x:adj.get(st)){
+            if(!vis[x]){
+                dfs(x,adj,vis,ans);
+            }
+        }
+    }
+}
