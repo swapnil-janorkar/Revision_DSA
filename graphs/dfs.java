@@ -1,6 +1,5 @@
 package graphs;
 import java.util.*;
-
 public class dfs {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
